@@ -2,12 +2,12 @@
  * app.js — Mini Answer Evaluator frontend logic
  *
  * Handles:
- *  - Live rubric preview as user types
- *  - API calls to Flask backend (/api/evaluate, /api/compare)
- *  - Rendering evaluation results and comparison view
+ * - Live rubric preview as user types
+ * - API calls to Flask backend (/api/evaluate, /api/compare)
+ * - Rendering evaluation results and comparison view
  */
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://YOUR-BACKEND-NAME.onrender.com"; // <--- PASTE YOUR ACTUAL RENDER URL HERE (No trailing slash!)
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const subjectSelect  = document.getElementById("subjectSelect");
@@ -106,7 +106,7 @@ async function runEvaluation(compare) {
     resultArea.innerHTML = `
       <div class="error-box">
         <strong>Evaluation failed.</strong><br>
-        ${err.message || "Could not connect to the backend. Make sure Flask is running on port 5000."}
+        ${err.message || "Could not connect to the backend. It may be sleeping (Render free tier) or unavailable."}
       </div>`;
   } finally {
     setLoading(false);
@@ -210,7 +210,7 @@ function setLoading(on) {
           <div class="loading-dots"><span></span><span></span><span></span></div>
           Evaluating...
         </button>
-        <p style="font-size:0.82rem">Sending to Claude API…</p>
+        <p style="font-size:0.82rem">Sending to Groq API…</p>
       </div>`;
   }
 }
