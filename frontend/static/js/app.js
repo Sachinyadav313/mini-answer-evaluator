@@ -7,7 +7,8 @@
  * - Rendering evaluation results and comparison view
  */
 
-const API_BASE = "https://YOUR-BACKEND-NAME.onrender.com"; // <--- PASTE YOUR ACTUAL RENDER URL HERE (No trailing slash!)
+// Updated to point to your live Render backend
+const API_BASE = "https://mini-answer-evaluator.onrender.com";
 
 // ── DOM refs ──────────────────────────────────────────────────────────────────
 const subjectSelect  = document.getElementById("subjectSelect");
